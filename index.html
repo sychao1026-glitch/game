@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>踩地雷</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell" aria-label="踩地雷網頁遊戲">
+      <section class="game">
+        <div class="topbar">
+          <div>
+            <h1>踩地雷</h1>
+            <p id="statusText">選個難度，第一步一定安全。</p>
+          </div>
+          <button class="new-game" id="newGameBtn" type="button">新遊戲</button>
+        </div>
+
+        <div class="scorebar" aria-label="遊戲狀態">
+          <div>
+            <span>剩餘地雷</span>
+            <strong id="mineCount">10</strong>
+          </div>
+          <div>
+            <span>時間</span>
+            <strong id="timer">000</strong>
+          </div>
+          <div>
+            <span>步數</span>
+            <strong id="moveCount">0</strong>
+          </div>
+        </div>
+
+        <div class="board-shell">
+          <div class="board" id="board" role="grid" aria-label="踩地雷棋盤"></div>
+        </div>
+      </section>
+
+      <aside class="side" aria-label="遊戲設定與說明">
+        <div class="difficulty" aria-label="選擇難度">
+          <button class="active" type="button" data-level="easy">初級</button>
+          <button type="button" data-level="medium">中級</button>
+          <button type="button" data-level="hard">高級</button>
+        </div>
+
+        <div class="legend" aria-label="格子圖例">
+          <div><span class="sample closed"></span> 未翻開</div>
+          <div><span class="sample flag">⚑</span> 插旗</div>
+          <div><span class="sample mine">✹</span> 地雷</div>
+        </div>
+
+        <div class="tips">
+          <h2>玩法</h2>
+          <p>左鍵翻格子。右鍵、長按，或用空白鍵對目前格子插旗。數字表示周圍八格共有幾顆地雷。</p>
+          <p>翻開所有安全格就獲勝；踩到地雷就結束。</p>
+        </div>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
